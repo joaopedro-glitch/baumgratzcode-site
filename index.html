@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ARGUS Watch | Baumgratz Code</title>
+    <title>Baumgratz Code | Intelligence for Healthcare</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -23,7 +23,6 @@
             scroll-behavior: smooth;
         }
 
-        /* Hero */
         .hero-section {
             background: linear-gradient(135deg, #000B1D 0%, #001A4D 50%, #003366 100%);
             min-height: 85vh;
@@ -34,102 +33,10 @@
             position: relative;
         }
 
-        .logo-container {
-            max-width: 650px;
-            width: 90%;
-            margin: 0 auto 1.5rem;
-            z-index: 10;
-        }
-
         .main-logo {
             width: 100%;
-            height: auto;
-            max-height: 280px;
-            object-fit: contain;
-        }
-
-        /* Cards */
-        .module-card-dark {
-            background: linear-gradient(145deg, #001A4D, #000B1D);
-            border: 1px solid rgba(0, 209, 255, 0.2);
-            transition: all 0.5s ease;
-        }
-
-        .module-card-light {
-            background: white;
-            border: 1px solid #e2e8f0;
-            transition: all 0.5s ease;
-        }
-
-        /* Timeline AGF */
-        .agf-gate {
-            border-left: 2px solid #cbd5e1;
-            padding-left: 2rem;
-            position: relative;
-            padding-bottom: 2rem;
-        }
-
-        .agf-gate::before {
-            content: '';
-            position: absolute;
-            left: -6px;
-            top: 0;
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-            background: var(--accent-blue);
-        }
-
-        /* Form Estilizado */
-        .glass-input {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            transition: all 0.3s ease;
-        }
-
-        .glass-input:focus {
-            background: rgba(255, 255, 255, 0.07);
-            border-color: var(--bright-blue);
-            outline: none;
-        }
-
-        /* Floating Buttons */
-        #backToTop {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            width: 45px;
-            height: 45px;
-            background: var(--accent-blue);
-            color: white;
-            border-radius: 50%;
-            display: none;
-            align-items: center;
-            justify-content: center;
-            z-index: 100;
-            box-shadow: 0 10px 20px rgba(0, 85, 255, 0.3);
-        }
-
-        #whatsappButton {
-            position: fixed;
-            bottom: 90px;
-            right: 30px;
-            width: 45px;
-            height: 45px;
-            background: #25D366;
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 100;
-            box-shadow: 0 10px 20px rgba(37, 211, 102, 0.3);
-            transition: transform 0.3s ease;
-        }
-
-        #whatsappButton:hover {
-            transform: scale(1.1);
-            background: #128C7E;
+            max-width: 600px;
+            filter: drop-shadow(0 0 15px rgba(0, 209, 255, 0.3));
         }
 
         .drop-cap::first-letter {
@@ -140,120 +47,259 @@
             margin-right: 0.75rem;
             line-height: 1;
         }
+
+        .module-card-dark {
+            background: linear-gradient(145deg, #001A4D, #000B1D);
+            border: 1px solid rgba(0, 209, 255, 0.2);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+            transition: all 0.4s ease;
+            display: block;
+        }
+
+        .module-card-dark:hover {
+            transform: translateY(-5px);
+            border-color: var(--bright-blue);
+        }
+
+        .module-card-light {
+            background: white;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 10px 30px rgba(0, 85, 255, 0.05);
+            transition: all 0.4s ease;
+        }
+
+        .totvs-tag {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: #fff;
+            padding: 6px 15px;
+            border-radius: 100px;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 2rem;
+        }
+
+        .glass-input {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: white;
+            transition: all 0.3s ease;
+        }
+
+        #whatsappButton {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 55px;
+            height: 55px;
+            background: #25D366;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 100;
+            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4);
+        }
+
+        /* --- ESTILOS DO CARROSSEL --- */
+        .slider {
+            background: white;
+            padding: 40px 0;
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .slide-track {
+            display: flex;
+            width: calc(250px * 16);
+            animation: scroll 30s linear infinite;
+        }
+
+        .slide {
+            width: 250px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0 40px;
+        }
+
+        .slide img {
+            max-width: 100%;
+            max-height: 50px;
+            filter: grayscale(100%);
+            opacity: 0.5;
+            transition: all 0.3s ease;
+        }
+
+        .slide img:hover {
+            filter: grayscale(0%);
+            opacity: 1;
+            transform: scale(1.05);
+        }
+
+        @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(calc(-250px * 4)); }
+        }
+
+        .slider::before, .slider::after {
+            background: linear-gradient(to right, white 0%, rgba(255, 255, 255, 0) 100%);
+            content: "";
+            height: 100%;
+            position: absolute;
+            width: 150px;
+            z-index: 2;
+        }
+
+        .slider::after { right: 0; top: 0; transform: rotateZ(180deg); }
+        .slider::before { left: 0; top: 0; }
+        /* --- FIM ESTILOS DO CARROSSEL --- */
+
     </style>
 </head>
 <body>
 
-    <a href="https://wa.me/5532999402534?text=Olá! Vim através do site e gostaria de mais informações sobre o ARGUS Watch." 
-       id="whatsappButton" 
-       target="_blank">
-        <i class="fab fa-whatsapp text-2xl"></i>
+    <a href="https://wa.me/5532999402534" id="whatsappButton" target="_blank">
+        <i class="fab fa-whatsapp text-3xl"></i>
     </a>
 
-    <button id="backToTop"><i class="fas fa-chevron-up"></i></button>
-
-    <nav class="fixed w-full z-50 bg-[#000B1D]/90 backdrop-blur-md border-b border-blue-900/30">
+    <nav class="fixed w-full z-50 bg-[#000B1D]/90 backdrop-blur-md border-b border-white/5">
         <div class="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
             <img src="https://i.postimg.cc/j2G6pmvr/Baumgratz-Code-logo-NEGATIVA-HORIZONTAL3.png" alt="Baumgratz Code" class="h-6">
-            
-            <div class="hidden md:flex space-x-8 items-center">
-                <a href="#sobre" class="text-white/70 hover:text-white text-xs uppercase tracking-widest font-light">Sobre</a>
-                <a href="#solucao" class="text-white/70 hover:text-white text-xs uppercase tracking-widest font-light">Ecossistema</a>
-                <a href="#metodologia" class="text-white/70 hover:text-white text-xs uppercase tracking-widest font-light">Metodologia</a>
-                <a href="#contato" class="bg-blue-600 hover:bg-blue-500 text-white px-6 py-2 rounded text-xs uppercase tracking-widest font-bold transition-all">Contato</a>
+            <div class="hidden md:flex space-x-10 items-center">
+                <a href="#sobre" class="text-white/60 hover:text-white text-[10px] uppercase tracking-widest font-bold">Empresa</a>
+                <a href="#produtos" class="text-white/60 hover:text-white text-[10px] uppercase tracking-widest font-bold">Nossos Produtos</a>
+                <a href="#totvs" class="text-white/60 hover:text-white text-[10px] uppercase tracking-widest font-bold">Consultoria TOTVS</a>
+                <a href="#contato" class="bg-blue-600 text-white px-7 py-2.5 rounded text-[10px] uppercase font-black tracking-widest hover:bg-blue-500 transition-all">Contato</a>
             </div>
         </div>
     </nav>
 
-    <header class="hero-section px-6">
-        <div class="max-w-5xl mx-auto z-10">
-            <div class="logo-container">
-                <img src="https://i.postimg.cc/HkF8WbCd/WATCH.png" alt="ARGUS WATCH" class="main-logo mx-auto">
+    <header class="hero-section px-6 text-white">
+        <div class="z-10">
+            <div class="totvs-tag">
+                <span class="w-2 h-2 bg-orange-500 rounded-full animate-pulse"></span>
+                CANAL HOMOLOGADO TOTVS RM
             </div>
-            <p class="text-blue-100/70 text-lg md:text-xl font-light leading-relaxed max-w-2xl mx-auto mt-6">
-                Monitorização Inteligente e Previsão de Riscos Assistenciais para Instituições de Saúde de Alta Performance.
+            <img src="https://i.postimg.cc/j2G6pmvr/Baumgratz-Code-logo-NEGATIVA-HORIZONTAL3.png" alt="Baumgratz Code" class="main-logo mx-auto mb-8">
+            <h1 class="text-2xl md:text-4xl font-light tracking-tight mb-4">
+                High-End <span class="font-bold text-blue-400">Software Engineering</span>
+            </h1>
+            <p class="text-blue-100/50 text-lg font-light max-w-2xl mx-auto italic">
+                Sistemas críticos e inteligência artificial para o futuro da saúde.
             </p>
         </div>
     </header>
 
-    <section id="sobre" class="py-24 bg-white">
+    <section id="sobre" class="pt-24 pb-12 bg-white">
         <div class="max-w-5xl mx-auto px-6">
             <div class="text-center mb-16">
-                <span class="text-blue-600 font-bold text-xs uppercase tracking-[0.3em] mb-4 block">Inteligência em Saúde</span>
-                <h3 class="text-4xl font-light text-slate-900">O Futuro da <span class="font-bold text-blue-700">Gestão de Riscos</span></h3>
+                <span class="text-blue-600 font-bold text-xs uppercase tracking-[0.3em] mb-4 block">Intelligence for Healthcare</span>
+                <h3 class="text-4xl font-light text-slate-900">Engenharia de <span class="font-bold text-blue-700">Alta Performance</span></h3>
             </div>
             <div class="space-y-12">
                 <div class="p-8 bg-blue-50/50 rounded-3xl border-l-4 border-blue-600">
                     <p class="text-xl leading-relaxed text-slate-800 drop-cap text-justify">
-                        A <span class="text-blue-700 font-semibold">Baumgratz Code</span> apresenta o <strong>ARGUS Watch</strong>, uma plataforma corporativa de monitoramento e gestão de riscos assistenciais, focada na integração de <strong>Inteligência Artificial</strong> para o Controle de Infecções e Segurança do Paciente.
+                        A <span class="text-blue-700 font-semibold">Baumgratz Code</span> é uma software house especializada no setor de saúde, focada em construir soluções que unem <strong>Robustez Técnica</strong> e <strong>Inteligência Preditiva</strong>. Atuamos no desenvolvimento de ecossistemas complexos, desde a infraestrutura de dados até a camada de interface, garantindo que instituições de saúde operem com máxima eficiência e segurança digital.
                     </p>
                 </div>
                 <div class="grid md:grid-cols-2 gap-8 text-slate-600 leading-relaxed text-justify">
-                    <p>O ARGUS Watch conta com ferramentas integradas de Controle de Infecção Hospitalar (CCIH) e Segurança do Paciente (NSP), promovendo previsibilidade, redução de riscos assistenciais e eficiência operacional.</p>
-                    <p>A tecnologia atua como uma camada de inteligência sobre os dados, reduzindo a carga cognitiva das equipes e focando no que realmente importa: a vida e a segurança hospitalar.</p>
+                    <p>Nossa expertise em sistemas de missão crítica permite que criemos ferramentas como o <strong>ARGUS Watch</strong>, transformando grandes volumes de dados em decisões clínicas inteligentes e seguras, otimizando fluxos e salvando vidas através da tecnologia.</p>
+                    <p>Além de nossos produtos proprietários, somos referência em integração e sustentação de ecossistemas hospitalares, unindo o que há de mais moderno em engenharia de software com as necessidades reais do dia a dia assistencial.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="solucao" class="py-24 bg-slate-50">
+    <section class="bg-white border-b border-slate-100 pb-16">
+        <div class="max-w-7xl mx-auto px-6 mb-8 text-center">
+            <span class="text-slate-400 font-bold text-[9px] uppercase tracking-[0.4em]">Instituições que confiam na Baumgratz Code</span>
+        </div>
+        <div class="slider">
+            <div class="slide-track">
+                <div class="slide"><img src="https://i.postimg.cc/Dydpq1T7/monte-sinai.png" alt="Hospital Monte Sinai"></div>
+                <div class="slide"><img src="https://i.postimg.cc/jdZ9pykk/dcbe37b1-998b-49c1-9e0a-aaad65ee13fe.jpg" alt="Logo Cliente"></div>
+                <div class="slide"><img src="https://i.postimg.cc/QNgvq2gj/logo_fj2.png" alt="Fundação José Bonifácio"></div>
+                <div class="slide"><img src="https://i.postimg.cc/nrxgJ2Jw/logo_spdm.png" alt="SPDM"></div>
+                <div class="slide"><img src="https://i.postimg.cc/Dydpq1T7/monte-sinai.png" alt="Hospital Monte Sinai"></div>
+                <div class="slide"><img src="https://i.postimg.cc/jdZ9pykk/dcbe37b1-998b-49c1-9e0a-aaad65ee13fe.jpg" alt="Logo Cliente"></div>
+                <div class="slide"><img src="https://i.postimg.cc/QNgvq2gj/logo_fj2.png" alt="Fundação José Bonifácio"></div>
+                <div class="slide"><img src="https://i.postimg.cc/nrxgJ2Jw/logo_spdm.png" alt="SPDM"></div>
+                <div class="slide"><img src="https://i.postimg.cc/Dydpq1T7/monte-sinai.png" alt="Hospital Monte Sinai"></div>
+                <div class="slide"><img src="https://i.postimg.cc/jdZ9pykk/dcbe37b1-998b-49c1-9e0a-aaad65ee13fe.jpg" alt="Logo Cliente"></div>
+                <div class="slide"><img src="https://i.postimg.cc/QNgvq2gj/logo_fj2.png" alt="Fundação José Bonifácio"></div>
+                <div class="slide"><img src="https://i.postimg.cc/nrxgJ2Jw/logo_spdm.png" alt="SPDM"></div>
+                <div class="slide"><img src="https://i.postimg.cc/Dydpq1T7/monte-sinai.png" alt="Hospital Monte Sinai"></div>
+                <div class="slide"><img src="https://i.postimg.cc/jdZ9pykk/dcbe37b1-998b-49c1-9e0a-aaad65ee13fe.jpg" alt="Logo Cliente"></div>
+                <div class="slide"><img src="https://i.postimg.cc/QNgvq2gj/logo_fj2.png" alt="Fundação José Bonifácio"></div>
+                <div class="slide"><img src="https://i.postimg.cc/nrxgJ2Jw/logo_spdm.png" alt="SPDM"></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="produtos" class="py-24 bg-slate-50 border-y border-slate-200">
         <div class="max-w-7xl mx-auto px-6">
-            <div class="mb-16">
-                <span class="text-blue-600 font-bold text-xs uppercase tracking-[0.3em] mb-4 block">Ecossistema Argus</span>
-                <h3 class="text-3xl font-light text-slate-900">Módulos de Controle e <span class="font-bold text-blue-800">Segurança</span>.</h3>
+            <div class="mb-16 text-center md:text-left">
+                <span class="text-blue-600 font-bold text-xs uppercase tracking-[0.3em] block mb-2">Portfolio de Produtos</span>
+                <h3 class="text-4xl font-light text-slate-900">Nossas <span class="font-bold text-blue-800">Soluções Proprietárias</span></h3>
             </div>
             
-            <div class="grid lg:grid-cols-2 gap-8">
-                <div class="module-card-dark p-10 text-white rounded-2xl shadow-xl">
-                    <h4 class="text-2xl font-bold mb-8 text-blue-400">CCIH e Higienização</h4>
-                    <ul class="space-y-4 text-sm font-light text-blue-100/80">
-                        <li class="border-l-2 border-blue-500/30 pl-4"><strong>Controle de Infecções (IRAS):</strong> Monitoramento rigoroso de PAV, ITU, ICS e gerenciamento de isolamentos.</li>
-                        <li class="border-l-2 border-blue-500/30 pl-4"><strong>Gestão Microbiológica e Lab:</strong> Integração laboratorial para culturas e antibiogramas.</li>
-                        <li class="border-l-2 border-blue-500/30 pl-4"><strong>Cirurgias e ISC:</strong> Classificação de risco cirúrgico e controle de Infecção de Sítio Cirúrgico.</li>
-                        <li class="border-l-2 border-blue-500/30 pl-4"><strong>Higienização e Manutenção:</strong> Gerenciamento de ambientes e checklists de verificação.</li>
-                        <li class="border-l-2 border-blue-500/30 pl-4"><strong>Gestão de Produtos (FISPQ):</strong> Controle conforme normas GHS e toxicologia.</li>
-                    </ul>
-                </div>
+            <div class="grid md:grid-cols-2 gap-8">
+                <a href="https://joaopedro-glitch.github.io/site-argus/" target="_blank" class="module-card-dark p-10 rounded-3xl text-white group">
+                    <img src="https://i.postimg.cc/HkF8WbCd/WATCH.png" alt="Argus Watch" class="h-10 mb-8">
+                    <p class="text-blue-100/70 leading-relaxed mb-6">
+                        Nossa principal IA de monitoramento assistencial. O ARGUS Watch processa dados em tempo real para identificar riscos de infecção e eventos críticos antes que ocorram.
+                    </p>
+                    <div class="flex items-center justify-between">
+                        <div class="flex gap-4">
+                            <span class="text-[9px] bg-blue-500/20 px-3 py-1 rounded-full border border-blue-500/30">REAL-TIME DATA</span>
+                            <span class="text-[9px] bg-blue-500/20 px-3 py-1 rounded-full border border-blue-500/30">IA PREDITIVA</span>
+                        </div>
+                        <i class="fas fa-external-link-alt text-blue-400 opacity-0 group-hover:opacity-100 transition-all"></i>
+                    </div>
+                </a>
 
-                <div class="module-card-light p-10 rounded-2xl shadow-md">
-                    <h4 class="text-2xl font-bold mb-8 text-slate-900">Núcleo de Segurança (NSP)</h4>
-                    <ul class="space-y-4 text-sm font-light text-slate-600">
-                        <li class="border-l-2 border-blue-100 pl-4"><strong>Eventos Adversos e Causa Raiz:</strong> Registro detalhado de eventos com upload de evidências.</li>
-                        <li class="border-l-2 border-blue-100 pl-4"><strong>Módulo de Bundles e Escores:</strong> Monitoramento de prevenção e índices de gravidade.</li>
-                        <li class="border-l-2 border-blue-100 pl-4"><strong>Monitoramento de Sinais Vitais:</strong> Alertas automáticos de alterações clínicas.</li>
-                        <li class="border-l-2 border-blue-100 pl-4"><strong>Internações e Dispositivos:</strong> Rastreamento de movimentação e tempo de permanência.</li>
-                        <li class="border-l-2 border-blue-100 pl-4"><strong>Gestão de Ficheiros e Auditoria:</strong> Upload em lote e log completo para conformidade.</li>
-                    </ul>
+                <div class="module-card-light p-10 rounded-3xl">
+                    <i class="fas fa-microchip text-3xl text-blue-600 mb-8"></i>
+                    <h4 class="text-2xl font-bold text-slate-900 mb-4">Sistemas de Missão Crítica</h4>
+                    <p class="text-slate-600 leading-relaxed">
+                        Desenvolvemos camadas de software robustas que garantem que o dado hospitalar circule com 100% de segurança e alta disponibilidade.
+                    </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="metodologia" class="py-24 bg-white">
-        <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16">
+    <section id="totvs" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
             <div>
-                <span class="text-blue-600 font-bold text-xs uppercase tracking-[0.3em] mb-4 block">Governança Objetiva</span>
-                <h3 class="text-4xl font-light text-slate-900 mb-6 italic">AGF — <span class="font-bold text-blue-700">ARGUS GATE FRAMEWORK</span></h3>
-                <p class="text-slate-600 text-lg font-light mb-8 text-justify">A <strong>AGF – Argus Gate Framework</strong> é a metodologia proprietária da Baumgratz Code para condução de projetos com foco em valor e previsibilidade.</p>
+                <span class="bg-orange-100 text-orange-700 px-4 py-1 rounded-full text-[10px] font-bold uppercase mb-6 inline-block">Sistemas de Gestão</span>
+                <h3 class="text-3xl font-light text-slate-900 mb-6 italic">Canal Homologado <span class="font-bold text-slate-900">TOTVS RM</span></h3>
+                <p class="text-slate-600 leading-relaxed mb-8">
+                    Como canal homologado para <strong>implantação e suporte</strong>, potencializamos seu ERP TOTVS RM com fórmulas visuais complexas e integrações nativas com nossos produtos de IA.
+                </p>
                 <div class="grid grid-cols-2 gap-4">
-                    <div class="p-4 bg-blue-50 rounded-xl">
-                        <i class="fas fa-eye text-blue-600 mb-2"></i>
-                        <p class="text-[10px] font-bold uppercase text-slate-900">Visão Contínua</p>
+                    <div class="p-4 bg-slate-50 border border-slate-200 rounded-xl shadow-sm text-center">
+                        <i class="fas fa-tools text-orange-500 mb-2"></i>
+                        <p class="text-[10px] font-bold text-slate-700 uppercase">Implantação e Suporte</p>
                     </div>
-                    <div class="p-4 bg-blue-50 rounded-xl">
-                        <i class="fas fa-check-double text-blue-600 mb-2"></i>
-                        <p class="text-[10px] font-bold uppercase text-slate-900">Decisão Controlada</p>
+                    <div class="p-4 bg-slate-50 border border-slate-200 rounded-xl shadow-sm text-center">
+                        <i class="fas fa-project-diagram text-orange-500 mb-2"></i>
+                        <p class="text-[10px] font-bold text-slate-700 uppercase">Fórmulas e Integração IA</p>
                     </div>
                 </div>
             </div>
-            <div class="bg-slate-900 p-10 rounded-3xl text-white">
-                <div class="space-y-6">
-                    <div class="agf-gate"><h5 class="text-sm font-bold">Gate 1 – Vendas</h5><p class="text-[10px] opacity-60">Decisão consciente de investimento.</p></div>
-                    <div class="agf-gate"><h5 class="text-sm font-bold">Gate 2 – Arquitetura</h5><p class="text-[10px] opacity-60">Validação técnica e operacional.</p></div>
-                    <div class="agf-gate"><h5 class="text-sm font-bold">Gate 3 – Transição Interna</h5><p class="text-[10px] opacity-60">Alinhamento antes da execução.</p></div>
-                    <div class="agf-gate"><h5 class="text-sm font-bold">Gate 4 – Onboarding</h5><p class="text-[10px] opacity-60">Kickoff e governança formal.</p></div>
-                    <div class="agf-gate"><h5 class="text-sm font-bold">Gate 5 – Implantação</h5><p class="text-[10px] opacity-60">Execução controlada e monitorizada.</p></div>
-                    <div class="agf-gate border-none"><h5 class="text-sm font-bold">Gate 6 – Suporte</h5><p class="text-[10px] opacity-60">Passagem de bastão e encerramento.</p></div>
+            <div class="relative">
+                <div class="bg-[#000B1D] p-12 rounded-[3rem] shadow-2xl text-center">
+                    <span class="text-white font-black text-4xl tracking-tighter">TOTVS</span>
+                    <p class="text-blue-400 text-xs mt-2 uppercase tracking-[0.3em] font-bold">Homologado</p>
                 </div>
             </div>
         </div>
@@ -261,101 +307,55 @@
 
     <footer id="contato" class="bg-[#000B1D] text-white pt-24 pb-12 relative">
         <div class="max-w-7xl mx-auto px-6">
-            <div class="grid lg:grid-cols-2 gap-20 mb-20">
+            <div class="grid lg:grid-cols-2 gap-20 mb-20 items-center">
                 <div>
-                    <img src="https://i.postimg.cc/j2G6pmvr/Baumgratz-Code-logo-NEGATIVA-HORIZONTAL3.png" alt="Baumgratz Code" class="h-8 mb-8">
-                    <h4 class="text-3xl font-light mb-6">Pronto para elevar a <span class="text-blue-500 font-bold">segurança da sua instituição?</span></h4>
-                    <p class="text-blue-100/50 font-light mb-8">Sede Administrativa: Juiz de Fora, Minas Gerais - Brasil</p>
+                    <img src="https://i.postimg.cc/j2G6pmvr/Baumgratz-Code-logo-NEGATIVA-HORIZONTAL3.png" alt="Logo" class="h-8 mb-8">
+                    <h4 class="text-4xl font-light mb-6 leading-tight">Vamos elevar o nível da sua <span class="text-blue-500 font-bold">operação tecnológica?</span></h4>
+                    <p class="text-blue-100/50 font-light mb-8">Sede Técnica e Administrativa:<br>Juiz de Fora, Minas Gerais - Brasil</p>
                     <div class="flex gap-4">
-                        <a href="https://www.linkedin.com/company/baumgratzcode" target="_blank" class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:bg-blue-600 transition-all" title="LinkedIn">
-                            <i class="fab fa-linkedin-in"></i>
-                        </a>
-                        <a href="https://www.instagram.com/argus.bc?igsh=YXJiemM3a3o3bXJk" target="_blank" class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:bg-pink-600 transition-all" title="Instagram">
-                            <i class="fab fa-instagram"></i>
-                        </a>
+                        <a href="https://www.linkedin.com/company/baumgratzcode" target="_blank" class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:bg-blue-600 transition-all"><i class="fab fa-linkedin-in text-sm"></i></a>
+                        <a href="https://www.instagram.com/baumgratzcode" target="_blank" class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:bg-pink-600 transition-all"><i class="fab fa-instagram text-sm"></i></a>
                     </div>
                 </div>
-                
-                <div class="bg-white/5 p-8 rounded-[2rem] border border-white/10">
+                <div class="bg-white/5 p-8 rounded-[2.5rem] border border-white/10">
                     <form id="contactForm" class="space-y-4">
                         <div class="grid md:grid-cols-2 gap-4">
-                            <input type="text" id="nome" placeholder="Nome Completo" required class="glass-input w-full p-4 rounded-xl text-sm text-white">
-                            <input type="text" id="instituicao" placeholder="Instituição" required class="glass-input w-full p-4 rounded-xl text-sm text-white">
+                            <input type="text" id="nome" placeholder="Seu Nome" required class="glass-input w-full p-4 rounded-xl text-sm outline-none">
+                            <input type="text" id="empresa" placeholder="Sua Instituição" required class="glass-input w-full p-4 rounded-xl text-sm outline-none">
                         </div>
-                        <input type="email" id="email" placeholder="E-mail Profissional" required class="glass-input w-full p-4 rounded-xl text-sm text-white">
-                        <textarea id="mensagem" placeholder="Mensagem" rows="4" required class="glass-input w-full p-4 rounded-xl text-sm text-white resize-none"></textarea>
-                        
-                        <button type="submit" id="submitBtn" disabled 
-                                class="w-full bg-blue-600 hover:bg-blue-500 py-4 rounded-xl font-bold uppercase tracking-widest text-xs transition-all flex items-center justify-center gap-2 
-                                       disabled:opacity-40 disabled:bg-slate-700 disabled:cursor-not-allowed">
-                            <span>Enviar Solicitação</span>
-                            <i class="fas fa-paper-plane"></i>
-                        </button>
+                        <input type="email" id="email" placeholder="E-mail Corporativo" required class="glass-input w-full p-4 rounded-xl text-sm outline-none">
+                        <textarea id="mensagem" placeholder="Fale sobre seu desafio ou sistema RM" rows="4" required class="glass-input w-full p-4 rounded-xl text-sm outline-none resize-none"></textarea>
+                        <button type="submit" id="submitBtn" disabled class="w-full bg-blue-600 hover:bg-blue-500 py-4 rounded-xl font-black uppercase text-[10px] tracking-widest transition-all disabled:opacity-30">Enviar Mensagem</button>
                     </form>
                 </div>
             </div>
-            
-            <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center text-[10px] text-white/30 tracking-widest uppercase">
-                <p>© 2026 Baumgratz Code. Todos os direitos reservados.</p>
-                <p>comercial@argusbc.com.br</p>
+            <div class="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between text-[9px] text-white/20 font-bold tracking-[0.3em] uppercase">
+                <p>© 2026 Baumgratz Code | Intelligence for Healthcare</p>
+                <p>RM TOTVS SPECIALISTS</p>
             </div>
         </div>
     </footer>
 
     <script>
-        // Smooth scroll para links internos
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 const href = this.getAttribute('href');
-                if (href !== '#') {
+                if (href !== '#' && href.startsWith('#')) {
                     e.preventDefault();
-                    const target = document.querySelector(href);
-                    if(target) target.scrollIntoView({ behavior: 'smooth' });
+                    document.querySelector(href).scrollIntoView({ behavior: 'smooth' });
                 }
             });
         });
 
-        // Back to Top e Visibilidade do WhatsApp
-        const btnTop = document.getElementById('backToTop');
-        window.onscroll = () => {
-            btnTop.style.display = window.scrollY > 500 ? 'flex' : 'none';
-        };
-        btnTop.onclick = () => window.scrollTo({top: 0, behavior: 'smooth'});
-
-        // LÓGICA DE VALIDAÇÃO E TRAVA DO FORMULÁRIO
         const contactForm = document.getElementById('contactForm');
         const submitBtn = document.getElementById('submitBtn');
-        const requiredInputs = contactForm.querySelectorAll('[required]');
-
-        function checkInputs() {
-            let allFilled = true;
-            requiredInputs.forEach(input => {
-                if (input.value.trim() === '') {
-                    allFilled = false;
-                }
-            });
-            submitBtn.disabled = !allFilled;
+        const inputs = contactForm.querySelectorAll('[required]');
+        function validate() {
+            let filled = true;
+            inputs.forEach(i => { if(i.value.trim() === "") filled = false; });
+            submitBtn.disabled = !filled;
         }
-
-        requiredInputs.forEach(input => {
-            input.addEventListener('input', checkInputs);
-        });
-
-        // Envio do Formulário
-        contactForm.onsubmit = (e) => {
-            e.preventDefault();
-            
-            const originalContent = submitBtn.innerHTML;
-            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Enviando...';
-            submitBtn.disabled = true;
-
-            setTimeout(() => {
-                alert('Mensagem enviada com sucesso!');
-                contactForm.reset();
-                submitBtn.innerHTML = originalContent;
-                checkInputs(); // Retrava após o reset
-            }, 1500);
-        };
+        inputs.forEach(i => i.addEventListener('input', validate));
     </script>
 </body>
 </html>
